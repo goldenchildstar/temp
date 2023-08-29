@@ -1,0 +1,86 @@
+en:
+  form:
+    instructions: "Register for free WIFI access"
+    or: " or "
+    facebook_alternative: "connect via Facebook"
+    sms_alternative: "connect via SMS"
+    labels:
+      first_name: "First name"
+      last_name:  "Last name"
+      phone:      "Phone"
+      email:      "Email"
+    placeholder:
+      first_name: "First name"
+      last_name:  "Last name"
+      phone:      "Phone"
+      email:      "Email"
+      company:      "Company"
+      sponsor_email:      "Sponsor Email"
+      code:       "Code"
+    submit:      "Connect"
+    optional:  "Optional"
+
+fr:
+  form:
+    instructions: "Compléter pour accéder au wifi,"
+    or: " ou "
+    facebook_alternative: "connectez-vous via Facebook"
+    sms_alternative: "connectez-vous via SMS"
+    labels:
+      first_name: "Prénom"
+      last_name:  "Nom"
+      phone:      "Téléphone"
+      email:      "Email"
+    placeholder:
+      first_name: "Prénom"
+      last_name:  "Nom"
+      phone:      "Téléphone"
+      email:      "Adresse email"
+      company:    "Société"
+      sponsor_email:      "Email de la personne visitée"
+      code:       "Code"
+    submit: "Connectez-vous"
+    optional:  "Facultatif"
+
+es:
+  form:
+    instructions: "Usted tiene que registrarse para tener acceso a wifi gratis"
+    or: " o "
+    facebook_alternative: "conectarse via Facebook"
+    sms_alternative: "conectarse via SMS"
+    labels:
+      first_name: "Nombre"
+      last_name:  "Apellido"
+      phone:      "Teléfono"
+      email:      "Email"
+    placeholder:
+      first_name: "Nombre"
+      last_name:  "Apellido"
+      phone:      "Teléfono"
+      email:      "Email"
+      sponsor_email:      "Sponsor Email"
+      code:       "Code"
+    submit:      "Connectarse"
+    optional:  "Optional"
+
+pt:
+  form:
+    instructions: "Conecte-se ao WIFI gratuito"
+    or: " ou "
+    facebook_alternative: "Conecte-se com Facebook"
+    sms_alternative: "connect via SMS"
+    labels:
+      first_name: "Nome"
+      last_name:  "Apellido"
+      phone:      "Telefone"
+      email:      "Email"
+    placeholder:
+      first_name: "Nome"
+      last_name:  "Apellido"
+      phone:      "Telefone"
+      email:      "Email"
+      company:      "Empresa"
+      sponsor_email:      "Email do patrocinador"
+      code:       "Código"
+    submit:      "Conectar"
+    optional:  "Opcional"

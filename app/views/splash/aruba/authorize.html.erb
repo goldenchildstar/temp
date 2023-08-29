@@ -1,0 +1,25 @@
+Authenticated
+IvizoneAuthenticated
+
+<!-- <form method='POST' action="http://securelogin.arubanetworks.com/cgi&#45;bin/login" id="authenticationForm"> -->
+<form method='POST' action="<%= @post_url %>" id="authenticationForm">
+  <input name='user'     value="ivizone" type="hidden" />
+  <input name='password' value="ivizonewifi" type="hidden" />
+  <input name='cmd'      value="authenticate" type="hidden" />
+  <!-- <input name='mac'      value="<%= request.params[:mac] %>" type="hidden" /> -->
+  <!-- <input name='ip'       value="<%= request.params[:ip] %>" type="hidden" /> -->
+  <!-- <input name='essid'    value="<%= request.params[:essid] %>" type="hidden" /> -->
+  <!-- <input name='url'      value="<%= request.params[:url] %>" type="hidden" /> -->
+  <!-- <input type="submit" name="Login" value="Connect" class="button" /> -->
+  <!-- <input type="submit" name="Login" value="authenticate" class="button" /> -->
+  <input type="submit" name="Login" class="button" />
+</form>
+
+<script>
+  function submitForm() {
+    document.createElement('form').submit.call(document.getElementById('authenticationForm'));
+  }
+
+  submitForm();
+</script>
+

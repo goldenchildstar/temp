@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+	<title>Club Med - Ile</title>
+	<link rel="stylesheet" href="/assets/custom/club-med/ile/stylesheets/all.css">
+
+</head>
+<body id="app-layout">
+
+<div class="club-med-background" id="club-med-background"></div>
+
+<div class="container-fluid app-body">
+
+	<div class="row header">
+		<div class="col-xs-12 text-center"><!-- Classes Switch Here -->
+			<img src="/assets/custom/club-med/ile/images/logo.png" class="logo-left"/>
+			<div class="header-left"></div>
+			<img src="/assets/custom/club-med/ile/images/logo-2.png" class="logo-middle"/>
+			<div class="header-right"></div>
+			<img src="/assets/custom/club-med/ile/images/logo-wifi.png" class="logo-right"/>
+		</div>
+	</div>
+
+	<div class="row body-icons" id="club-med-icons">
+		<div class="col-xs-12  text-center">
+
+			<div class="col-xs-12 form-container" id="icons-container">
+				<p class="offre-legale">
+          <a href="<%= meraki_link('ile.html') %>">< Revenir à l'accueil</a>
+						Ces données sont destinées au Club Med afin de vous fournir le service demandé. Pour cela elle pourront être transférées à des tiers dans le respect de la législation et de vos droits. Vous disposez de droits d’accès, de rectification, de suppression, d’opposition relatifs à vos données.
+						<a href="/assets/custom/club-med/ile/cgu/cgu.pdf" target="_blank">Pour en savoir plus</a><br /><br />
+          <a href="<%= meraki_link('ile.html') %>">< Revenir à l'accueil</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<div id="MMD_conditions">
+	<div id="MMD_conditionsHeader">
+	  <div class="MMD_conditionsTitre MMD_F1">Terms and Conditions</div><!-- Text Here -->
+	  <img id="MMD_conditionsCClick" class="MMD_conditionsClose" src="/assets/custom/club-med/ile/images/Close_btn.png" />
+	</div>
+	<div class="container">
+		<div class="row">
+		    <div class="MMD_innerContent">
+		        <img id="cgu_logo" class="MMD_conditionsLogo" src="/assets/custom/club-med/ile/images/logo.png" />
+		    </div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/assets/custom/club-med/ile/javascript/all.js"></script>
+<script type="text/javascript">
+	ividata.core.templates.landing();
+</script>
+</body>
+</html>

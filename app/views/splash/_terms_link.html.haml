@@ -1,0 +1,20 @@
+:css
+  .modal-body {
+    max-height: 200px;
+    overflow: auto;
+  }
+
+  .terms-disclaimer {
+    font-size: 9px;
+  }
+
+#termsModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.btn.close(aria-hidden='true' data-dismiss='modal') &times;
+        %h4.modal-title Conditions générales d'utilisation
+      .modal-body
+        = render 'splash/ivizone_terms'
+      .modal-footer
+        %button.btn.btn-primary(type='button' data-dismiss='modal') Fermer

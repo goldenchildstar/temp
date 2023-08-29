@@ -1,0 +1,37 @@
+
+%link(rel="stylesheet" href="/assets/custom/shared/stylesheets/intlTelInput.css")
+:css
+  .intl-tel-input {
+      width: 100%;
+  }
+
+- content_for :custom_javascript do
+  %script(type="text/javascript" src="/assets/custom/shared/javascript/jquery/jquery-ui.min.js")
+  %script(type="text/javascript" src="/assets/custom/shared/javascript/intlTelInput.js")
+
+  :javascript
+      $(document).ready(function(){
+          $("#phone").intlTelInput({
+              initialCountry: 'fr',
+              preferredCountries: ['fr'],
+              utilsScript: "/assets/custom/shared/javascript/utils.js"
+          });
+
+          function getNum(){
+              var intlNumber = $("#phone").intlTelInput("getNumber");
+              return intlNumber;
+          }
+          $form = $('#ivizone-form');
+          $submit = $('#form-submit');
+          $submit.on('click',function(e){
+              e.preventDefault();
+              $('#phone').val(getNum());
+              $form.submit();
+          });
+
+          $submit.on('touchend', function(e){
+              e.preventDefault();
+              $('#phone').val(getNum());
+              $form.submit();
+          });
+      });

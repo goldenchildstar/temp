@@ -1,0 +1,7 @@
+# http://seravo.fi/2013/tips-to-optimize-images-for-faster-loading-websites
+# http://andrew.hedges.name/experiments/aspect_ratio/
+
+# convert input_file -resize width output_file
+convert logo_longchamp_white.jpg -resize 300 logo_longchamp_white_300.jpg
+jpegoptim --max=90 --strip-all --preserve --totals --all-progressive $file
+optipng -o7 -preserve

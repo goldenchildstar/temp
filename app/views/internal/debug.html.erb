@@ -1,0 +1,12 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <% params.except(:controller, :action).each do |parameter, value| %>
+      <p>
+        key: <%= parameter %>  value:  <%= value %> 
+      </p>
+    <% end %>
+    <a href="<%= params[:switch_url] %>"><%= params[:switch_url] %></a>  
+  </body>
+</html>

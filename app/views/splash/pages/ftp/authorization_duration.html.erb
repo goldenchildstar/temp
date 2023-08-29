@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>FTP</title>
+    <link rel="stylesheet" href="/assets/custom/shared/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/custom/shared/stylesheets/background.css">
+    <link rel="stylesheet" href="/assets/custom/shared/tooltips.css">
+    <script type="text/javascript" src="/assets/custom/shared/javascript/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/javascript/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/parsley.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/javascript/cgu.js"></script>
+    <style type="text/css" media="screen">
+      .parsley-error {
+        color: #B94A48 !important;
+        background-color: #F2DEDE !important;
+        border: 1px solid #EED3D7 !important;
+      }
+      .form-input {
+        padding-bottom: 3px;
+      }
+      .text-wifi {
+        font-size: 20px;
+        color: black;
+      }
+
+      #link_cgu, .text-cgu {
+        color: black;
+      }
+
+      #custom_sms {
+        text-align: center;
+      }
+
+      #wait-spinner {
+        margin: auto;
+        margin-top: 45px;
+        margin-bottom: 20px;
+      }
+
+      .authorization-text {
+        margin-top: 80px;
+      }
+      #header {
+        text-align: center;
+      }
+      .ftp-logo {
+        max-width: 90%;
+        margin: 30px auto;
+      }
+      .form-container {
+        margin: 30px auto;
+        text-align: center;
+      }
+      .authorization-text {
+        display: none;
+      }
+      .btn-ftp {
+        background-color: white;
+      }
+      #header {
+        height: auto;
+      }
+      #ftp_logo {
+        width: 500px;
+        max-width: 80%;
+        margin: 15px auto;
+      }
+      @media screen and (min-width: 768px) {
+        #ftp_logo {
+          margin: 60px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id='sponsor_authorization_request_id' data-key="<%= @key %>"></div>
+    <div id='redirection_url' data-url="<%= @authorization_url %>"></div>
+    <div id="background_image_off"></div><!-- End Background -->
+
+    <div id="header">
+      <img id="ftp_logo" class="img-responsive" src="/assets/custom/ftp/images/logo_ftp_2.jpg" />
+    </div>
+
+    <div class="row form-container">
+      <div class="col-xs-12">
+
+        <form action="<%= ftp_sponsor_authorize_url %>" id="ivizone-form" method="POST" accept-charset="utf-8">
+          <p>
+            Pour quelle durée souhaitez vous autoriser l'accès ?
+          </p>
+          <input type="radio" name="duration" value="86400" checked> Un jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <br />
+          <input type="radio" name="duration" value="604800"> Une semaine
+          <br />
+          <input type="radio" name="duration" value="2592000"> Un mois&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <br /><br />
+          <input type="hidden" name="key" value="<%= params[:key] %>">
+          <button class="btn btn-ftp" id="btn-ftp">Valider</button>
+        </form>
+
+        <p id="conf-duration" class="hidden">
+          Votre choix de durée a bien été enregistré !
+        </p>
+
+      </div>
+    </div>
+
+    <div class='row text-wifi authorization-text'>
+      <%= @authorization_result_text %>
+    </div>
+
+  </body>
+  <script>
+  $(document).ready(function(){
+    var $formDuration = $('#ivizone-form');
+    var $btnFtp = $('#btn-ftp');
+    var $confDuration = $('#conf-duration');
+    $btnFtp.click(function(e){
+      e.preventDefault();
+      $formDuration.submit();
+      $formDuration.addClass('hidden');
+      $confDuration.removeClass('hidden');
+    });
+  });
+  </script>
+</html>

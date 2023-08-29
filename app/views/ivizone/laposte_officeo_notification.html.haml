@@ -1,0 +1,17 @@
+%p Un client vient de demander une réservation pour la campagne Officeo sur le site: "#{@data[:network]}"
+
+%p
+  %p
+    Prénom: #{@data[:user_data][:first_name]}
+  %p
+    Nom: #{@data[:user_data][:last_name]}
+  %p
+    Téléphone: #{@data[:user_data][:phone]}
+  - if @data[:user_data][:custom]['RaisonSociale'].present?
+    %p 
+      Raison Sociale: #{@data[:user_data][:custom]['RaisonSociale']}
+  - if @data[:user_data][:custom]['secteur_activite'].present?
+    %p
+      Secteur d'Activité: #{@data[:user_data][:custom]['secteur_activite']}
+  %p
+    Date de connexion: #{Time.zone.now.in_time_zone('Europe/Paris')}

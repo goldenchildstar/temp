@@ -1,0 +1,132 @@
+!!! 5
+%html(lang='#{I18n.locale}')
+  %head
+    = render 'shared/head'
+  %body
+    = stylesheet_link_tag 'application.css'
+    = render 'splash/css/application'
+    #spinner
+
+    %div#main_content
+      .container
+        :css
+          #logo {
+            height: 161px;
+            width: 300px;
+            margin-top: 40px;
+          }
+
+          .submit-btn {
+            margin-top: 10px;
+            font-weight: 700;
+            width: 100%;
+            background-color: #82909A;
+            color: white;
+          }
+
+        :css
+          .ivizone-form {
+            width: 80%;
+            margin: auto;
+            margin-bottom: 20px;
+          }
+
+          .form-group {
+            margin: 0;
+            margin-bottom: 8px;
+          }
+
+          .parsley-error {
+            color: #B94A48 !important;
+            background-color: #F2DEDE !important;
+            border: 1px solid #EED3D7 !important;
+          }
+
+        .welcome
+          .row
+            = image_tag  asset_data_uri('organizations/maif_social_club/logo-maif_social_club-300x161.png'), class: 'img-responsive', id: 'logo'
+
+          .row.welcome-message
+            %p#message
+              = t('form.instructions')
+              %br #{t('form.or')} #{link_to t('form.facebook_alternative'), alt_page('facebook') }
+
+          = form_tag meraki_sms_registration_path, class: 'ivizone-form', role: 'form', id: 'ivizone-form', data: {'parsley-validate': true, 'parsley-focus': 'none'} do
+            
+            .form-group
+              = label_tag 'last_name', t('form.labels.last_name')
+              = text_field_tag 'last_name', nil, placeholder: t('form.placeholder.last_name'), class: 'form-control', data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+
+            .form-group
+              = label_tag 'first_name', t('form.labels.first_name')
+              = text_field_tag 'first_name', nil, placeholder: t('form.placeholder.first_name'), class: 'form-control', data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+            
+
+            
+            .form-group
+              = label_tag 'phone', t('form.labels.phone')
+              = phone_field_tag 'phone', nil,  class: 'form-control', data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+            
+
+            
+            .form-group
+              = label_tag 'email', t('form.labels.email')
+              = email_field_tag 'email', nil, placeholder: t('form.placeholder.email'), class: 'form-control', data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+            
+
+            .form-group
+              = check_box_tag 'cgu', nil, false, data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+              = label_tag 'cgu', t('legal.full_disclaimer') 
+              #{link_to t('legal.conditions'), '#', :'data-toggle' => "modal", id: 'termsLink', class: 'loader', :'data-target' => '#termsModal'}
+
+            = render 'splash/default_splash_fields'
+
+            = button_tag t('form.submit'), class: 'btn submit-btn', id: 'form-submit'
+
+          .row.center-text.terms-link
+            = render 'splash/terms_link'
+
+        = render 'splash/international_phone_formatter'
+
+    = javascript_include_tag 'application.js'
+    = content_for :custom_javascript
+
+    :javascript
+      var opts = {
+        lines: 10, // The number of lines to draw
+        length: 13, // The length of each line
+        width: 6, // The line thickness
+        radius: 10, // The radius of the inner circle
+        corners: 1, // Corner roundness (0..1)
+        rotate: 0, // The rotation offset
+        direction: 1, // 1: clockwise, -1: counterclockwise
+        color: '#fff', // #rgb or #rrggbb or array of colors
+        speed: 1.5, // Rounds per second
+        trail: 30, // Afterglow percentage
+        shadow: false, // Whether to render a shadow
+        hwaccel: false, // Whether to use hardware acceleration
+        className: 'spinner', // The CSS class to assign to the spinner
+        zIndex: 2e9, // The z-index (defaults to 2000000000)
+        top: '50', // Top position relative to parent in px
+        left: '50' // Left position relative to parent in px
+      };
+
+      target = document.getElementById('spinner');
+      var spinner = new Spinner(opts).spin(target);
+
+      $('#facebook-link').click(function(e){
+        $('#spinner').show();
+        mixpanel.track('Facebook clicked');
+      });
+
+      if (typeof(Parsley) !== "undefined") {
+        Parsley.on('form:submit', function(event){
+          $('#spinner').show();
+          mixpanel.track('Standard Form Submitted');
+          //Ivizone.logEvent({event: 'UserSubmittedForm'});
+        });
+      }
+
+      mixpanel.register(#{@tracking_data.to_json.html_safe});
+      mixpanel.track("Page loaded");
+      mixpanel.track_links('#termsLink', "Viewed Terms");

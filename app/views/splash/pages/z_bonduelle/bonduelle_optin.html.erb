@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>Bonduelle Connexion</title>
+    <link rel="stylesheet" href="/assets/custom/bonduelle/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/custom/bonduelle/stylesheets/formpage.css">
+    <link rel="stylesheet" href="/assets/custom/shared/tooltips.css">
+    <link rel="stylesheet" href="/assets/custom/bonduelle/stylesheets/intlTelInput.css">
+    <script type="text/javascript" src="/assets/custom/bonduelle/javascript/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/bonduelle/javascript/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/parsley.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/bonduelle/javascript/bonduelle.js"></script>
+    <style type="text/css" media="screen">
+        .parsley-error {
+            color: #B94A48 !important;
+            background-color: #F2DEDE !important;
+            border: 1px solid #EED3D7 !important;
+        }
+        .intl-tel-input {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+
+<div id="cloud-scroll"></div><!-- End Background -->
+
+<div id="MMD_header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img id="MMD_headerLogo" src="/assets/custom/bonduelle/images/bonduelle_logo_new.png" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ 
+<form action="<%= meraki_sms_registration_path %>" id="ivizone-form" method="POST" data-parsley-validate="">
+    <div id="MMD_text_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <p class="text-wifi"><%= t('bonduelle.header_one') %><br/><%= t('bonduelle.form_entry') %></p>
+                    <div class="col-xs-12" id="error-first">
+                        <input data-parsley-errors-container="#error-first" type="text" name="first_name" id="first_name" class="form_MMD_F1" placeholder="<%= t('bonduelle.form.placeholder.first_name') %>" data-parsley-error-message="Merci de renseigner votre prénom" required="" data-parsley-required="" />
+                    </div><div class="col-xs-12" id="error-last">
+                    <input data-parsley-errors-container="#error-last" type="text" name="last_name" id="last_name" class="form_MMD_F1" placeholder="<%= t('bonduelle.form.placeholder.last_name') %>" data-parsley-error-message="Merci de renseigner votre nom" required="" data-parsley-required="" />
+                </div><div class="col-xs-12" id="error-phone">
+                    <input data-parsley-errors-container="#error-phone" type="tel" name="phone" id="phone" class="form_MMD_F1" placeholder="<%= t('bonduelle.form.placeholder.telephone') %>" data-parsley-error-message="Merci de renseigner votre numéro" required="" data-parsley-required="" />
+                </div>
+                    <%= render 'splash/default_splash_fields' %>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-xs-12" id="error-cgu">
+                    <div class="col-xs-1 col-xs-offset-1">
+                        <div class="cgu">
+                            <input data-parsley-errors-container="#error-cgu" type="checkbox" name="cgu" id="cgu" required="" data-parsley-error-message="Merci de cocher cette case" data-parsley-trigger="change"/>
+                            <label for="cgu"></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-9">
+                        <p class="text-cgu">
+                            <%= t('bonduelle.form.terms_one') %><a href="#" id="link_cgu"><%= t('bonduelle.form.terms_two') %></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="MMD_text_link">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <input id="MMD_formBtn" type="submit" class="MMD_F1" value="<%= t('bonduelle.form.validate') %>" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="MMD_pelouse"></div>
+
+<div id="MMD_footer">
+    <div id="MMD_footerLine"></div>
+    <div class="container">
+        <div class="row">
+            <div class="MMD_innerContent">
+                <div class="col-xs-12">
+                    <div id="MMD_footerDGClick" class="MMD_footerText" class="MMD_F1"><%= t('bonduelle.cgu') %></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="MMD_conditions">
+    <div id="MMD_conditionsHeader">
+        <div class="MMD_conditionsTitre MMD_F1">Conditions générales d'utilisation</div>
+        <img id="MMD_conditionsCClick" class="MMD_conditionsClose" src="/assets/custom/bonduelle/images/Close_btn.png" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="MMD_innerContent">
+                <div class="MMD_conditionsTexte MMD_F1">
+                    Les présentes conditions générales d’utilisation (ci-après les « <span class="MMD_conditionsBold">Conditions Générales</span> »)  régissent l’accès à et l’utilisation du réseau Wi-Fi (ci-après le « <span class="MMD_conditionsBold">Wi-Fi</span> ») de Bonduelle (ci-après l’ « <span class="MMD_conditionsBold">Enseigne</span> »), au sein de ses points de vente physiques participants, par ses visiteurs et clients (ci-après ensemble, les « <span class="MMD_conditionsBold">Utilisateurs</span> »). En se connectant au Wi-Fi l’Utilisateur accepte expressément les présentes Conditions Générales en ce compris l’ensemble des engagements et responsabilités en découlant. <span class="MMD_conditionsBold">Si l’Utilisateur n’accepte par les Conditions Générales, il ne doit pas utiliser le Wi-Fi</span>. Les présentes Conditions Générales peuvent être modifiées à tout moment par l’Enseigne. Dans ce cas, l’accès au Wi-Fi et son utilisation après la date de modification impliquera l’acceptation expresse, pleine et entière par l’Utilisateur des Conditions Générales telles que modifiées.
+                    <br /><br />
+                    <span class="MMD_conditionsBold">Chapitre 1 : Conditions d'accès au Wi-Fi</span>
+                    <br /><br />
+                    L'Enseigne propose, gratuitement, à ses Utilisateurs de se connecter et d’utiliser le Wi-Fi de ses points de vente physiques participants, pendant les horaires d’ouverture desdits points de vente, et selon les conditions techniques définies par l’Enseigne. Il est précisé que le Wi-Fi est fourni par un fournisseur d’accès tiers et que l’Enseigne se réserve le droit de changer à tout moment de fournisseur d’accès à internet.
+                    <br /><br />
+                    Afin de pouvoir utiliser le Wi-Fi, l’Utilisateur doit (i) disposer d’un terminal (ordinateur, smartphone, tablette etc.) lui permettant de se connecter au réseau Internet (le « Terminal ») et (ii) s’enregistrer sur la page d’accueil Wi-Fi de l’Enseigne en renseignant ses nom, prénom, adresse mail et numéro de téléphone ou en s’inscrivant via son compte Facebook. L’Utilisateur garantit que les informations fournies lors de son enregistrement sont exactes et à jour.
+                    <br /><br />
+                    Il est précisé que l'utilisation du Wi-Fi par les mineurs s'effectue sous la seule responsabilité de leurs parents ou représentants légaux, sans que la responsabilité de l’Enseigne ne puisse être en aucun cas recherchée concernant cette utilisation. L’Enseigne met par ailleurs en garde l'Utilisateur sur la nature et la diversité des contenus disponibles sur le réseau Internet, lesquels peuvent être inadaptés au jeune public.
+                    <br /><br />
+                    <span class="MMD_conditionsBold">Chapitre 2 : Modalités de fourniture du Wi-Fi</span>
+                    <br /><br />
+                    L’Enseigne prendra des mesures raisonnables afin que le Wi-Fi soit accessible pendant les horaires d’ouverture des points de vente physiques participants. Toutefois, l’Enseigne ne prend aucun engagement quant à (i) la disponibilité et l’accessibilité permanentes du Wi-Fi, (ii) la qualité, la vitesse ou le volume de transmission des données ou (iii) l’absence d’interférence et d’anomalies dans la transmission des données. Il est notamment précisé que le réseau Internet et les systèmes informatiques et de télécommunication ne sont pas exempts d’erreurs et que des interruptions et des dysfonctionnements sont susceptibles de survenir. L’Enseigne ne fournit aucune garantie à cet égard et ne saurait être tenu responsable de tout dommage résultant de l’utilisation du réseau Internet et des systèmes informatiques et de télécommunication.
+                    <br /><br />
+                    L’Enseigne se réserve le droit d’interrompre, temporairement ou définitivement, l’accès au Wi-Fi, sans engager sa responsabilité de quelque manière que ce soit, notamment si cela est nécessaire pour des besoins de maintenance technique ou pour remplir ses obligations légales.
+                    <br /><br />
+                    L’Enseigne se réserve également le droit de suspendre, temporairement ou définitivement, sans engager sa responsabilité de quelque manière que ce soit, l’accès au Wi-Fi par un Utilisateur en particulier, si ledit Utilisateur ne respecte pas ou si l’Enseigne a des raisons de croire que l’Utilisateur ne respecte pas les dispositions des présentes Conditions Générales.
+                    <br /><br />
+                    Enfin il est précisé qu’afin de remplir ses obligations légales, l’Enseigne pourra bloquer l’accès à certains sites et contenus, notamment (i) les sites diffusant des images pédophiles (ii) les sites faisant l’apologie des crimes contre l’humanité, des crimes et délits ou incitant à la haine raciale ainsi que (ii) les sites de partage de fichiers, de téléchargement illégal et de manière générale tout site permettant de porter atteinte à des œuvres ou objets protégés par un droit d’auteur ou par un droit voisin.
+                    <br /><br />
+                    <span class="MMD_conditionsBold">Chapitre 3 : Modalités d’utilisation du Wi-Fi</span>
+                    <br /><br />
+                    L'Utilisateur est seul responsable et assume les risques inhérents à l’utilisation du Wi-Fi. L’Utilisateur est ainsi seul responsable et dédommagera l’Enseigne pour tout préjudice direct ou indirect causé à l’Enseigne et/ou à tout tiers du fait de son utilisation du Wi-Fi. Il est précisé que tout accès au Wi-Fi effectué à partir du Terminal de l’Utilisateur sera réputé effectué par lui et qu’il en sera donc responsable.
+                    <br /><br />
+                    L’Utilisateur s’engage à utiliser le Wi-Fi uniquement pour son utilisation personnelle (et non à des fins commerciales), de manière appropriée et dans le respect de toutes les lois et réglementations applicables.
+                    <br /><br />
+                    L'Utilisateur s'interdit toute utilisation frauduleuse, abusive ou excessive du Wi-Fi, telle que notamment, sans que cette liste ne soit limitative, le téléchargement d’une quantité de données abusive ou inhabituelle, l'encombrement volontaire ou involontaire du réseau ou de serveurs de messageries par du publipostage sauvage (spamming, bulk e-mail, junk e-mail ou mail bombing), ou l'envoi de messages attractifs générant nécessairement un nombre imposant de réponses (teasing ou trolling) pouvant ainsi perturber la disponibilité du Wi-Fi et assume l'entière responsabilité d'une telle utilisation du Wi-Fi.
+                    <br /><br />
+                    L’Utilisateur s’engage également à ne pas utiliser le Wi-Fi en vue de commettre des agissements illégaux, délictueux ou inappropriés, à savoir :
+                    <br />transmettre ou accéder via le Wi-Fi à tout contenu  inapproprié, illicite, illégal, contraire aux bonnes mœurs ou à l'ordre public. En particulier l’Utilisateur s’interdit de se connecter à des sites contenant des images à caractère pornographique, racistes, incitant à la haine, à la violence ou faisant l’apologie de crimes contre l’humanité.
+                    <br />Transmettre ou accéder, via le Wi-Fi, à tout contenu portant atteinte ou susceptible de porter atteinte aux droits de tiers. En particulier l’Utilisateur s’engage à ne pas violer, dans le cadre de son utilisation du Wi-Fi, la vie privée de tiers, à ne pas véhiculer de propos diffamatoires.
+                    <br />Utiliser le Wi-Fi à des fins de reproduction, de représentation, de mise à disposition ou de communication au public d’œuvres ou d’objets protégés par un droit d’auteur ou par un droit voisin, tels que des textes, images, photographies, œuvres musicales, œuvres audiovisuelles, logiciels et jeux vidéo, sans autorisation. L’Utilisateur est informé qu’un logiciel de partage, lorsqu’il est connecté à internet, peut mettre à disposition automatiquement des fichiers téléchargés. Si un logiciel de partage a été utilisé pour télécharger des œuvres protégées, il est donc préférable de le désactiver.
+                    <br />A cet égard il est rappelé à l’Utilisateur qu’il est tenu, en tant que titulaire d’un accès à des services de communication au public en ligne, de veiller à ce que cet accès ne fasse pas l'objet d'une utilisation violant les droits des titulaires de droit d’auteur ou droit voisin, au sens des dispositions prévues au sein du Code de la Propriété Intellectuelle. .Il est également rappelé à l'Utilisateur que la Haute Autorité pour la diffusion des œuvres et la protection des droits sur internet (HADOPI) peut être amenée à prendre les mesures suivantes :
+                    <br />Lorsqu'elle est saisie de faits susceptibles de constituer un manquement à l'obligation définie ci-avant, l'HADOPI peut envoyer, sous son timbre et pour son compte, à l'Utilisateur par l'intermédiaire de l’Enseigne une recommandation contenant le rappel de l’obligation précitée, une injonction de la respecter ainsi que toutes informations utiles concernant la lutte contre le piratage, et des moyens de sécurisation pouvant exister. Une telle recommandation comportera notamment la date et l'heure des faits en cause et les coordonnées de contact auxquelles l'HADOPI pourra être jointe par l'Utilisateur ;
+                    <br />En cas de renouvellement dans un délai de 6 mois à compter de l'envoi de la recommandation visée ci-dessus, l'HADOPI peut adresser une nouvelle recommandation comportant les mêmes informations que la précédente par voie électronique dans les mêmes conditions que visées précédemment. L' HADOPI peut assortir cette recommandation d'une lettre remise contre signature ou de tout autre moyen propre à établir la preuve de la date d'envoi de cette recommandation. En outre, l'Utilisateur est informé que la violation des droits d'auteurs et des droits voisins au sens du Code de la Propriété Intellectuelle est un délit puni des peines pénales prévues aux articles L.335-2, L.335-3, L.335-4, L.335-5, L.335-6 et L.335-7 du CPI. Par ailleurs, l'Utilisateur encourt des sanctions civiles en réparation du préjudice subi par les ayants-droits.
+                    <br /><br />
+                    L’Utilisateur est seul responsable du contenu qu’il publie sur Internet, dans le cadre de son utilisation du Wi-Fi.
+                    <br /><br />
+                    <span class="MMD_conditionsBold">Chapitre 4. Sécurité</span>
+                    <br /><br />
+                    L’Utilisateur est informé et reconnait qu'Internet n'est pas un réseau sécurisé et que l'intégrité, l'authentification et la confidentialité des informations, fichiers et données de toute nature qu'il souhaite échanger via le Wi-Fi ne peuvent être garanties. Les communications effectuées via le Wi-Fi présentent en principe le même niveau de sécurité que les communications Internet standard. L'Utilisateur ne doit donc pas transmettre via le Wi-Fi des messages dont il souhaiterait voir la confidentialité garantie de manière infaillible.
+                    <br /><br />
+                    Dans ces conditions, il appartient à l’Utilisateur de prendre toutes les mesures appropriées de façon à protéger ses propres données et/ou logiciels notamment de la contamination par d'éventuels virus circulant sur le réseau Internet ou de l'intrusion d'un tiers dans le système de son Terminal à quelque fin que ce soit, et de procéder sur son Terminal, à des sauvegardes préalablement et postérieurement à l’utilisation du Wi-Fi. S'il souhaite renforcer le niveau de sécurité, l'Utilisateur peut installer lui-même un logiciel de sécurité, tel que les coupe-feu (firewalls) ou les VPNs (Virtual Private Networks) sur son Terminal.
+                    <br /><br />
+                    <span class="MMD_conditionsBold">Chapitre 5. Protection des données à caractère personnel</span>
+                    <br /><br />
+                    Dans le cadre de l’utilisation du Wi-Fi, l’Enseigne recueille et traite des données à caractère personnel concernant l’Utilisateur. Toutes les données à caractère personnel concernant l’Utilisateur seront utilisées à tout moment conformément à la législation en vigueur en matière de protection des données à caractère personnel.
+                    <br /><br />
+                    <br />Les données recueillies par l’Enseigne dans le cadre de l’utilisation du Wi-Fi par l’Utilisateur sont les suivantes :
+                    <br />Les informations recueillies lors de l’enregistrement sur la page d’accueil Wi-Fi, à savoir : ses nom, prénom, numéro de téléphone.
+                    <br />Les données d’identification et les données relatives au trafic telles que définies par les dispositions du Code des Postes et des Communications Electroniques ainsi que par la Loi pour la Confiance dans l’Economie Numérique.
+                    <br /><br />
+                    Les données susmentionnées sont collectées et traitées par l’Enseigne pour les finalités suivantes :
+                    <br />Fourniture du Wi-Fi,
+                    <br />Respect des obligations légales et réglementaires, À cette fin, l’Enseigne pourra être amenée à communiquer les données aux autorités judiciaires compétentes, à la HADOPI ou à l’autorité nationale de sécurité des systèmes d’information (ANSSI).
+                    <br />Etablissement de statistiques sur les Utilisateurs, ainsi sur leur comportement
+                    <br /><br />
+                    L’Utilisateur consent à ce que ses données à caractère personnel soient transférées ou accessibles à d’autres sociétés du groupe XXX à des fins de [à compléter avec finalités du transfert] ou à des prestataires techniques (hébergeurs, etc.) [compléter avec nom des entités ou services destinataires ainsi que leur pays d’établissement]. Ces tiers peuvent être situés au sein ou en dehors de l’espace économique européen [à compléter/adapter]. L’Utilisateur consent expressément à un tel transfert de ses données.
+                    <br /><br />
+                    En vous connectant au réseau Wi-Fi, vous accédez directement à un espace dédié de l’Enseigne. L’Enseigne peut utiliser des cookies ou autres outils de traçage sur cet espace dédié afin (i) de faciliter son utilisation et la navigation de l’Utilisateur en se souvenant de l’Utilisateur lors de ses utilisations successives, (ii) de fournir des informations et publicités personnalisées ainsi qu’à (iii) des fins de mesures et de statistiques. L’Utilisateur peut désactiver tout ou partie de ces cookies en changeant les paramètres de son navigateur. De manière générale, ces paramètres apparaissent dans le menu « Options » ou « Préférences » du navigateur.
+                    <br /><br />
+                    L’Utilisateur reconnait également que, s’il a coché la case prévue à cet effet lors de son enregistrement, l’Enseigne, les sociétés de son groupe et/ou ses partenaires commerciaux pourra/ont utiliser les données à caractère personnel le concernant afin de lui fournir des informations promotionnelles sur leurs produits, offres et activités.
+                    <br /><br />
+                    L’Enseigne s’interdit de communiquer les données à caractère personnel relatives à l’Utilisateur à d’autres tiers et à d’autres fins que celles énoncées dans les présentes Conditions Générales, sans le consentement de l’Utilisateur.
+                    <br /><br />
+                    L’Utilisateur dispose d’un droit d’accès à, et de rectification de, ses données à caractère personnel détenues par l’Enseigne. L’Utilisateur peut exercer ces droits en s’adressant à [à compléter par l’Enseigne].
+                    <br /><br />
+                    Il est précisé que l’Utilisateur peut également, pour des motifs légitimes, s’opposer au traitement des données le concernant. Dans un tel cas, l’Utilisateur ne pourra pas accéder au Wi-Fi.
+                    <br /><br />
+                    <span class="MMD_conditionsBold">Chapitre 6. Limitation de responsabilité de l’Enseigne</span>
+                    <br /><br />
+                    L’Enseigne fournit le Wi-Fi dans le cadre d’une obligation de moyens. Dans toute la mesure permise par la réglementation en vigueur, l’Enseigne exclu toute responsabilité pour tout dommage relatif à l’accès à ou l’utilisation du Wi-Fi. En particulier l’Enseigne décline toute responsabilité en cas :
+                    <br />de perturbations, d’interférences et/ou d'indisponibilité totale ou partielle du Wi-Fi,
+                    <br />de perturbation ou diminution de la qualité, de la vitesse ou du volume de transmission des données,
+                    <br />de mauvaise installation et/ou de mauvaise configuration et/ou de dysfonctionnement du Terminal de l'Utilisateur,
+                    <br />de dommages causés au Terminal ou aux logiciels installés sur celui-ci ou tout autre dommage imputable à l’utilisation du Wi-Fi,
+                    <br />en cas d’atteinte à l'intégrité, l'authentification et la confidentialité des données transmises par l’Utilisateur dans le cadre de son utilisation du Wi-Fi,
+                    <br />d’utilisation du Wi-Fi par l’Utilisateur non-conforme aux présentes Conditions Générales,
+                    <br />de survenance de tout évènement de force majeure au sens de la jurisprudence de la Cour de Cassation.
+                    <br /><br />
+                    L’Enseigne n'est pas responsable des contenus tiers accessibles via le Wi-Fi et des dommages qui peuvent naître de leur utilisation. L’Utilisateur devra se référer aux conditions d’utilisation applicables des sites web concernés et s’adresser directement aux éditeurs de ces sites pour toute réclamation ou litige relatifs au contenu ou à l’utilisation desdits sites.
+                    <br /><br />
+                    L’Enseigne ne saurait également être tenue responsable de l'exploitation des données et informations que l'Utilisateur introduit ou récupère dans le cadre de l’utilisation du Wi-Fi.
+                    <br /><br />
+                    <span class="MMD_conditionsBold">Chapitre 7. Stipulations diverses</span>
+                    <br /><br />
+                    Dans l’hypothèse où l’une quelconque des stipulations des présentes Conditions Générales serait considérée comme nulle et non valable et déclarée comme telle conformément à toute loi ou réglementation ou en application d’une décision définitive prononcée par un tribunal d’une juridiction compétente, toutes les autres stipulations demeureront valables et pleinement applicables.
+                    <br /><br />
+                    Le fait pour l’Enseigne de ne pas exiger à un moment quelconque l’exécution complète d’une stipulation des présentes n’affectera en aucune façon le droit de cette dernière de s’en prévaloir ultérieurement
+                    <br /><br />
+                    Les présentes Conditions Générales sont régies par le droit français.
+                    <br /><br />
+                    Le nom, le logo et tout autre signe distinctif de l’Enseigne (les « Marques ») sont des marques détenues ou licenciées exclusivement par l’Enseigne ou ses concédants. L’Enseigne ou ses concédants sont seuls titulaires des droits de propriété susceptibles d’être attachés aux Marques. Aucun droit, ni aucune licence n’est concédé(e) aux Utilisateurs sur les Marques.
+                </div>
+                <img id="cgu_logo" class="MMD_conditionsLogo" src="/assets/custom/bonduelle/images/Bonduelle_logo.png" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/assets/custom/bonduelle/javascript/intlTelInput.js"></script>
+<script type="text/javascript">
+
+$("#phone").intlTelInput({
+        initialCountry: 'fr',
+        preferredCountries: ['fr'],
+        utilsScript: "/assets/custom/bonduelle/javascript/utils.js"
+        });
+    $(document).ready(function(){
+
+        function getNum(){
+            var intlNumber = $("#phone").intlTelInput("getNumber");
+            return intlNumber;
+        }
+        $form = $('#ivizone-form');
+        $submit = $('#MMD_formBtn');
+        $submit.on('click',function(e){
+            e.preventDefault();
+            $('#phone').val(getNum());
+            $form.submit();
+        });
+
+        $submit.on('touchend', function(e){
+            e.preventDefault();
+            $('#phone').val(getNum());
+            $form.submit();
+        });
+
+
+        document.getElementById("cgu_logo").src="/assets/custom/bonduelle/images/Bonduelle_logo.png";
+        document.getElementById("MMD_conditionsCClick").src="/assets/custom/bonduelle/images/Close_btn.png";
+
+        document.getElementById("mentions_logo").src="/assets/custom/bonduelle/images/Bonduelle_logo.png";
+        document.getElementById("MMD_mentionsCClick").src="/assets/custom/bonduelle/images/Close_btn.png";
+
+        Ivizone.addCampaignData({
+            campaign: 'default',
+            page: 'form'
+        });
+
+        Ivizone.logPageViewed();
+    });
+</script>
+
+
+</body>
+</html>

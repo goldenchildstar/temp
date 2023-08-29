@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+	<title>MOB - Hotel of the People</title>
+	<link rel="stylesheet" href="/assets/custom/mob_hotel/hotel/stylesheets/all.css">
+
+</head>
+<body id="app-layout" class="anim-mob">
+
+	<div class="container-fluid app-body">
+
+		<img id="mob-logo" class="mob-logo mob-img" src="/assets/custom/mob_hotel/hotel/images/mob_connect_logo.png" />
+		<a id="form-link" href="#">
+			<img id="mob-mail" class="mob-img mob-mail" src="/assets/custom/mob_hotel/hotel/images/mob_connect_bouton.png" />
+		</a>
+
+		<div class="row body-form" id="mob-form">
+			<div class="col-xs-12 form-container">
+				<form action="<%= registration_path %>" id="ivizone-form" method="POST" accept-charset="utf-8" data-parsley-validate="">
+
+					<div class="col-xs-12 first-input">
+						<img id="mob-form-logo" class="mob-form-logo" src="/assets/custom/mob_hotel/hotel/images/mob_form_logo.png" />
+					</div>
+
+					<div class="col-xs-12 form-group">
+						<input type="text" name="first_name" id="first_name" class="form-control" placeholder="Prénom" data-parsley-error-message="Merci de renseigner votre prénom" />
+					</div>
+
+					<div class="col-xs-12 form-group">
+						<input type="text" name="last_name" id="last_name" class="form-control" placeholder="Nom" data-parsley-error-message="Merci de renseigner votre nom" />
+					</div>
+
+					<div class="col-xs-12 form-group">
+						<input type="email" name="email" id="email" class="form-control" placeholder="E-mail" data-parsley-required-message="Merci de renseigner votre e-mail." />
+					</div>
+
+					<div class="col-xs-12 text-center checkbox form-no-padding">
+						<div class="col-xs-12" id="error-cgu" class="form-no-padding">
+							<div class="col-xs-1">
+								<div class="cgu">
+									<input data-parsley-errors-container="#error-cgu" type="checkbox" name="cgu" id="cgu" required="" required="" data-parsley-error-message="Merci de cocher cette case" data-parsley-trigger="change"/>
+									<label for="cgu"></label>
+								</div>
+							</div>
+							<div class="col-xs-10">
+								<p class="text-cgu">
+									<a href="#" id="link_cgu">J'accepte les CGV</a>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 text-center checkbox form-no-padding">
+						<div class="col-xs-12" class="form-no-padding">
+							<div class="col-xs-1">
+								<div class="newsletter">
+									<input type="checkbox" name="custom[newsletter]" id="custom[newsletter]">
+									<label for="custom[newsletter]"></label>
+								</div>
+							</div>
+							<div class="col-xs-10">
+								<p class="text-newsletter">
+									<a href="#" id="link_newsletter">Cultivez votre curiosité</a>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 text-center">
+						<input type="submit" class="btn btn-default" name="" id="btn-submit-mob" value="">
+					</div>
+					<p class="invisible-point">
+						.
+					</p>
+					<%= render 'splash/default_splash_fields' %>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<div id="MMD_conditions">
+    <div id="MMD_conditionsHeader">
+        <div class="MMD_conditionsTitre MMD_F1">Terms and Conditions</div>
+        <img id="MMD_conditionsCClick" class="MMD_conditionsClose" src="/assets/custom/mob_hotel/hotel/images/Close_btn.png" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="MMD_innerContent">
+                <div class="MMD_conditionsTexte MMD_F1">
+									<h1>WIFI MOB HOTEL,</h1>
+									<h2>COMME ÇA VOUS ÊTES AU COURANT...</h2>
+									<p>
+										MOB HOTEL donne la possibilité d'accéder gratuitement à internet par l'intermédiaire des HOTSPOTS WIFI MOB HOTEL à condition d'accepter les dispositions ci-dessous.
+									</p>
+									<p>
+										<b>OBLIGATIONS DES UTILISATEURS</b>
+									</p>
+									<p>
+										Chaque utilisateur est conscient que la mise à disposition d'un accès à Internet libre et gratuit nécessite une utilisation raisonnable de l'outil. Ainsi, sans être exhaustif, l'utilisateur ne doit pas tenter de contourner les protections techniques mises en place, diffuser des propos injurieux ou diffamatoires, ou faire transiter tout contenu à caractère illicite, notamment contraire aux droits de tiers, notamment de propriété intellectuelle, à l’ordre public ou aux bonnes mœurs. L’utilisateur est seul responsable de tout préjudice direct ou indirect, matériel ou immatériel causé à des tiers du fait de son utilisation du service.
+									</p>
+									<p>
+										Il est expressément rappelé qu'Internet n'est pas un réseau sécurisé. Dans ces conditions, l’utilisateur est seul responsable de prendre toutes les mesures appropriées de façon à protéger ses matériels, équipements, logiciels et données notamment de la contamination par d'éventuels virus circulant sur le réseau Internet ou de l'intrusion d'un tiers dans le système de son terminal (ordinateur portable, tablette, smartphone...) à quelque fin que ce soit, et de procéder sur son terminal à des sauvegardes préalablement et postérieurement à la mise en place du service. MOB HOTEL décline toute responsabilité concernant de tels événements.
+									</p>
+									<p>
+										<b>OBLIGATIONS DE MOB HOTEL</b>
+									</p>
+									<p>
+										L'utilisateur est averti que MOB HOTEL conserve pour une durée d’un (1) an, comme il en a l'obligation, les traces des de trafic aux fins de mise à disposition des autorités légalement habilitées, si nécessaire. Ces données sont protégées par la loi n° 78-17 du 6 janvier 1978 relative à l'Informatique, aux Fichiers et aux Libertés telle que modifiée par la loi n° 2004-801 du 6 août 2004. Vous disposez d’un droit d’accès, de rectification et de suppression de vos données pour des motifs légitimes en vous adressant à hello@mobhotel.com. La prestation fournie par MOB HOTEL est sans garantie de dommages pouvant être causés par une coupure intempestive, virus ou autre événement qui lui serait extérieur.
+										MOB HOTEL se réserve le droit de bloquer l’accès à certains sites (notamment des sites de partage de fichiers, de téléchargement illégal et/ou à caractère pornographique, etc.), de décider unilatéralement d'interdire ou de couper l'accès de toute personne qui ne se conformerait pas à la présente charte, ainsi que d'en avertir toutes autorités compétentes.
+									</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/assets/custom/mob_hotel/hotel/javascript/all.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>Kenzo - Connect</title>
+    <link rel="stylesheet" href="/assets/custom/kenzo/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/custom/kenzo/stylesheets/salon.css">
+    <link rel="stylesheet" href="/assets/custom/shared/tooltips.css">
+    <script type="text/javascript" src="/assets/custom/kenzo/javascript/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/kenzo/javascript/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/parsley.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/kenzo/javascript/custom.js"></script>
+    <style type="text/css" media="screen">
+        .parsley-error {
+            color: #B94A48 !important;
+            background-color: #F2DEDE !important;
+            border: 1px solid #EED3D7 !important;
+        }
+        #header_logo {
+          padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div id="background_image"></div><!-- End Background -->
+
+<div id="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center kenzo-container">
+                <p class="text-wifi">SIGN IN FOR<br/>WIFI ACCESS WITH</p>
+                <p>
+                  <a id="instagram-link" href="<%= signin_path(:instagram) %>">
+                      <img src="/assets/custom/kenzo/images/instagram_en.png" class="facebook"/>
+                  </a>
+                </p>
+                <p>
+                  <a id="facebook-link" href="<%= signin_path(:facebook) %>">
+                      <img src="/assets/custom/kenzo/images/facebook_en.png" class="facebook"/>
+                  </a>
+                </p>
+                <p>
+                  <a id="optin-link" href="<%= alt_page('salon-optin') %>">
+                      <img src="/assets/custom/kenzo/images/mail_en.png" class="facebook"/>
+                  </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="MMD_footer">
+    <div id="MMD_footerLine"></div>
+    <div class="container">
+        <div class="row">
+            <div class="MMD_innerContent">
+                <div class="col-xs-12">
+                    <div id="MMD_footerDGClick" class="MMD_footerText" class="MMD_F1">Terms and Conditions of Usage</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="MMD_conditions">
+    <div id="MMD_conditionsHeader">
+        <div class="MMD_conditionsTitre MMD_F1">Terms and Conditions</div>
+        <img id="MMD_conditionsCClick" class="MMD_conditionsClose" src="/assets/custom/kenzo/images/Close_btn.png" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="MMD_innerContent">
+                <div class="MMD_conditionsTexte MMD_F1">
+                  <%= render 'splash/ivizone_terms.en' %>
+                </div>
+                <img id="cgu_logo" class="MMD_conditionsLogo" src="/assets/custom/kenzo/images/kenzo-logo-v2-black.svg" />
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

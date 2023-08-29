@@ -1,0 +1,29 @@
+:css
+  .input-form {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+
+= form_tag registration_path, class: 'input-form', role: 'form', id: 'input-form' do
+  .form-group{class: last_name_error}
+    = label_tag 'last_name', t('form.labels.last_name')
+    = text_field_tag 'last_name', nil, placeholder: t('form.placeholder.last_name'), class: 'form-control', value: @last_name
+
+  .form-group{class: first_name_error}
+    = label_tag 'first_name', t('form.labels.first_name')
+    = text_field_tag 'first_name', nil, placeholder: t('form.placeholder.first_name'), class: 'form-control', value: @first_name
+
+  .form-group{class: email_error}
+    = label_tag 'email', t('form.labels.email')
+    = email_field_tag 'email', nil, placeholder: t('form.placeholder.email'), class: 'form-control', value: @email
+
+  = render 'splash/default_splash_fields'
+
+  = button_tag t('form.submit'), class: 'btn submit-btn', id: 'submit'

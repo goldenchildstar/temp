@@ -1,0 +1,43 @@
+:css
+  .input-form {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .parsley-error {
+    color: #B94A48 !important;
+    background-color: #F2DEDE !important;
+    border: 1px solid #EED3D7 !important;
+  }
+
+= form_tag registration_path, class: 'input-form', role: 'form', id: 'input-form', data: {'parsley-validate': true, 'parsley-focus': 'none'} do
+  .form-group
+    = label_tag 'last_name', t('form.labels.last_name')
+    = text_field_tag 'last_name', nil, placeholder: t('form.placeholder.last_name'), class: 'form-control', data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+
+  .form-group
+    = label_tag 'first_name', t('form.labels.first_name')
+    = text_field_tag 'first_name', nil, placeholder: t('form.placeholder.first_name'), class: 'form-control', data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+
+  .form-group
+    = label_tag 'phone', t('form.labels.phone')
+    = phone_field_tag 'phone', nil, placeholder: t('form.placeholder.phone'), class: 'form-control', data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+
+  .form-group
+    = label_tag 'email', t('form.labels.email')
+    = email_field_tag 'email', nil, placeholder: t('form.placeholder.email'), class: 'form-control', data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+
+  .form-group
+    = check_box_tag 'cgu', nil, false, data: {'parsley-errors-messages-disabled': true, 'parsley-required': true}
+    = label_tag 'cgu', t('legal.full_disclaimer') 
+    #{link_to t('legal.conditions'), '#', :'data-toggle' => "modal", id: 'termsLink', class: 'loader', :'data-target' => '#termsModal'}
+
+  = render 'splash/default_splash_fields'
+
+  = button_tag t('form.submit'), class: 'btn submit-btn'

@@ -1,0 +1,20 @@
+en:
+  legal:
+    disclaimer: "By using this internet connection, you agree to"
+    disclaimer_cont: "and accept the "
+    full_disclaimer: "By using this internet connection, you agree to and accept the "
+    conditions: "terms and conditions of usage"
+    cgu: "Terms and Conditions of Usage"
+fr:
+  legal:
+    disclaimer: "En utilisant cette connexion internet,"
+    disclaimer_cont: "vous acceptez les "
+    full_disclaimer: "En utilisant cette connexion internet, vous acceptez les "
+    conditions: "conditions générales d'utilisation"
+    cgu: "Conditions Générales de Utilisation"
+es:
+  legal:
+    disclaimer: "Mediante el uso de esta conexión a Internet, usted está de acuerdo"
+    disclaimer_cont: "y acepta los"
+    full_disclaimer: "Mediante el uso de esta conexión a Internet, usted está de acuerdo y acepta los "
+    conditions: "términos y condiciones de uso"

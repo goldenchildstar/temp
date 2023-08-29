@@ -1,0 +1,44 @@
+en:
+  bonduelle:
+    header_one: "TO ACCESS WIFI"
+    header_two: "CONNECT VIA :"
+    sms_option: "OR CONNECT VIA SMS" 
+    linkedin_option: "CONNECT VIA LINKEDIN, OR" 
+    cgu: "Terms and Conditions"
+    form_entry: 'PLEASE FILL OUT:'
+    sms_one:  "PLEASE ENTER THE CODE"
+    sms_two:  "RECEIVED BY SMS:"
+    sms_invalid: "THE CODE ENTERED IS INCORRECT"
+    sms_new: "REQUEST A NEW CODE"
+    form:
+      placeholder:
+        first_name: "First name"
+        last_name:  "Last name"
+        telephone:  "Mobile telephone number" 
+        code:       "Code"
+      terms_one: "BY USING THIS INTERNET CONNECTION, I ACCEPT THE "
+      terms_two: "TERMS AND CONDITIONS OF USAGE"
+      validate: "Submit"
+
+
+fr:
+  bonduelle:
+    header_one: "POUR AVOIR ACCES AU WIFI"
+    header_two: "CONNECTEZ-VOUS AVEC"
+    sms_option: "OU CONNECTEZ-VOUS PAR SMS" 
+    linkedin_option: "CONNECTEZ-VOUS PAR LINKEDIN, OU" 
+    cgu: "Conditions générales d'utilisation"
+    form_entry: 'ENTREZ VOS COORDONNEES'
+    sms_one:  "VEUILLEZ SAISIR LE CODE"
+    sms_two:  "RECU PAR SMS:"
+    sms_invalid: "LE CODE SAISI N'EST PAS VALIDE"
+    sms_new: "DEMANDEZ UN NOUVEAU CODE"
+    form:
+      placeholder:
+        first_name: "Prénom"
+        last_name:  "Nom"
+        telephone:  "N° de téléphone mobile" 
+        code:       "Code"
+      terms_one: "EN UTILISANT CETTE CONNEXION INTERNET, VOUS ACCEPTEZ LES "
+      terms_two: "CONDITIONS GENERALES D'UTILISATION"
+      validate: "Valider"

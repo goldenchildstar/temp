@@ -1,0 +1,16 @@
+.welcome
+  .row
+    = image_tag 'burger_king.png', class: 'img-responsive logo'
+
+  .row.welcome-message
+    %p Connectez-vous au WIFI gratuitement, via:
+
+  .auth-methods
+    .row
+      %p= link_to 'LinkedIn',    signin_path(:linkedin), class: 'btn btn-primary btn-large linkedin', role: 'button'
+    .row
+      %p= link_to 'Facebook',    signin_path(:facebook), class:  'btn btn-primary btn-large linkedin', role: 'button'
+    .row
+      %p= link_to 'Google Apps', signin_path(:google_apps), class:  'btn btn-primary btn-large linkedin', role: 'button'
+    .row
+      %p= link_to 'Email',       email_list_path, class:  'btn btn-primary btn-large linkedin', role: 'button'

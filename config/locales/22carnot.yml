@@ -1,0 +1,48 @@
+en:
+  carnot:
+    wifi_header_1: "Fill out the form to connect to wifi"
+    wifi_header_link: "enter your access code"
+    or: "or"
+    sponsor_title: "Sponsorship"
+    cgu: "Terms and Conditions of Usage"
+    wait: 
+      in_progress: "You authorization is in progress.."
+      wait_header: "Please wait"
+      authorized: "You have been authorized to connect to wifi"
+      continue: "Click here to continue"
+      request_new: "Request a new authorization"
+    code:
+      request_new: "Request a new access code"
+      validate: "Submit"
+      invalid: "Code Incorrect"
+    mail:
+      logo_url: "http://static.ivizone.com/22carnot/emails/22carnot-en.png"
+      subject: "Wifi Authorization Code"
+      hello: "Hello"
+      instructions: "Please find below your access code to the 22Carnot’s Guest WiFi <b>valid for 12 hours</b>. This code allows you to reconnect to the WiFi from the sponsorship page if you lose the network connection. "
+      goodbye: "Have a good day,"
+      signature: "The IT 22Carnot team"
+fr:
+  carnot:
+    wifi_header_1: "Complétez les informations pour accéder au wifi"
+    wifi_header_link: "entrer votre code d'accès"
+    or: "ou"
+    sponsor_title: "Parrainage"
+    cgu: "Conditions Générales de Utilisation"
+    wait: 
+      in_progress: "Vous allez etre autorisé à accéder au wifi"
+      wait_header: "Merci de patienter"
+      authorized: "Vous etes autorisé à accéder au wifi"
+      continue: "Cliquez ici pour continuer"
+      request_new: "Demander une nouvelle autorisation"
+    code:
+      request_new: "Demander un nouveau code d'accès"
+      validate: "Valider"
+      invalid: "Code Invalide"
+    mail:
+      logo_url: "http://static.ivizone.com/22carnot/emails/22carnot-fr.png"
+      subject: "Code d'autorisation d'accès au wifi guest"
+      hello: "Bonjour"
+      instructions: "Veuillez trouver ci-dessous votre code d’accès au WiFi Guest 22Carnot <b>valable pendant 12 heures</b>. Ce code vous permet de vous reconnecter au WiFi depuis l’écran de parrainage si vous perdez la connexion au réseau."
+      goodbye: "Bonne journée."
+      signature: "L’équipe IT 22Carnot."

@@ -1,0 +1,51 @@
+{
+    "executionRoleArn": "arn:aws:iam::853218352007:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+      {
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/ivizone-splash",
+            "awslogs-region": "eu-west-1",
+            "awslogs-stream-prefix": "ecs"
+          }
+        },
+        "portMappings": [
+          {
+            "hostPort": 3000,
+            "protocol": "tcp",
+            "containerPort": 3000
+          }
+        ],
+        "command": [
+          "bundle",
+          "exec",
+          "puma",
+          "-C",
+          "config/puma.rb"
+        ],
+        "environment": [
+          {
+            "name": "RACK_ENV",
+            "value": "production"
+          },
+          {
+            "name": "RAILS_ENV",
+            "value": "production"
+          }
+        ],
+        "workingDirectory": "/usr/src/app/",
+        "image": "<IMAGE1_NAME>",
+        "essential": true,
+        "name": "ivizone-splash-container"
+      }
+    ],
+    "memory": "1024",
+    "taskRoleArn": "arn:aws:iam::853218352007:role/ivizone-splash-ecs-role",
+    "family": "ivizone-splash",
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256"
+  }

@@ -1,0 +1,32 @@
+= hidden_field_tag 'locale',            I18n.locale
+
+- if meraki_portal?
+  = hidden_field_tag 'organization',      default_splash_meraki_params[:organization]
+  = hidden_field_tag 'page',              default_splash_meraki_params[:page]
+  = hidden_field_tag 'base_grant_url',    default_splash_meraki_params[:base_grant_url]
+  = hidden_field_tag 'user_continue_url', default_splash_meraki_params[:user_continue_url]
+  = hidden_field_tag 'node_id',           default_splash_meraki_params[:node_id]
+  = hidden_field_tag 'node_mac',          default_splash_meraki_params[:node_mac]
+  = hidden_field_tag 'gateway_id',        default_splash_meraki_params[:gateway_id]
+  = hidden_field_tag 'client_ip',         default_splash_meraki_params[:client_ip]
+  = hidden_field_tag 'client_mac',        default_splash_meraki_params[:client_mac]
+  = hidden_field_tag 'portal',            default_splash_meraki_params[:portal]
+  = hidden_field_tag 'duration',          default_splash_meraki_params[:duration]
+- elsif aruba_portal?
+  = hidden_field_tag 'organization',      default_splash_aruba_params[:organization]
+  = hidden_field_tag 'page_path',         default_splash_aruba_params[:page_path]
+  = hidden_field_tag 'cmd',               default_splash_aruba_params[:cmd]
+  = hidden_field_tag 'mac',               default_splash_aruba_params[:mac]
+  = hidden_field_tag 'essid',             default_splash_aruba_params[:essid]
+  = hidden_field_tag 'ip',                default_splash_aruba_params[:ip]
+  = hidden_field_tag 'apname',            default_splash_aruba_params[:apname]
+  = hidden_field_tag 'vcname',            default_splash_aruba_params[:vcname]
+  = hidden_field_tag 'switchip',          default_splash_aruba_params[:switchip]
+  = hidden_field_tag 'url',               default_splash_aruba_params[:url]
+  = hidden_field_tag 'page_path',         default_splash_aruba_params[:page_path]
+  = hidden_field_tag 'portal',            default_splash_aruba_params[:portal]
+  = hidden_field_tag 'duration',          default_splash_aruba_params[:duration]
+- else
+  = hidden_field_tag 'organization',      page_parameters[:organization]
+  = hidden_field_tag 'page_path',         page_parameters[:page_path]
+  = hidden_field_tag 'page',              page_parameters[:page]

@@ -1,0 +1,20 @@
+:css
+  #logo {
+    height: 41px;
+    width: 300px;
+    margin-top: 40px;
+  }
+
+
+
+.welcome
+  .row
+    = image_tag  asset_data_uri('organizations/devred/logo-devred-300x41.png'), class: 'img-responsive', id: 'logo'
+    = image_tag  "http://px.devred.com?pid=p-e0b4a9af&sid=dvd3sr6my&so=ivizone&store_mac=#{params[:node_mac]}&email=#{params[:email]}"
+
+  .row.welcome-message
+    %p#message
+      = t('splash.connected')
+
+:javascript
+  window.location = "http://www.devred.com"; 

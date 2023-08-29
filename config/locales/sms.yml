@@ -1,0 +1,28 @@
+en:
+  sms:
+    sms_option: "OR CONNECT VIA SMS" 
+    cgu: "Terms and Conditions"
+    form_entry: 'PLEASE FILL OUT:'
+    sms_one:  "PLEASE ENTER THE CODE"
+    sms_two:  "RECEIVED BY SMS:"
+    sms_invalid: "THE CODE ENTERED IS INCORRECT"
+    sms_new: "Request a new code"
+    form:
+      placeholder:
+        telephone:  "Mobile telephone number" 
+        code:       "Code"
+      validate: "Submit"
+
+
+fr:
+  sms:
+    sms_option: "Ou connectez-vous par sms"
+    sms_one:  "Veuillez saisir le code"
+    sms_two:  "Réçu par SMS:"
+    sms_invalid: "Le code saisi n'est pas valide"
+    sms_new: "Démandez un nouveau code"
+    form:
+      placeholder:
+        telephone:  "N° de téléphone mobile" 
+        code:       "Code"
+      validate: "Valider"

@@ -1,0 +1,45 @@
+en:
+  splash:
+    connect_to_wifi: "Register for free WIFI access: "
+    facebook:
+      instructions: "Connect via Facebook for free WIFI access "
+      or: ""
+      alternative: "or click here"
+    linkedin:
+      instructions: "Connect via LinkedIn for free WIFI access "
+      or: ""
+      alternative: "or click here"
+    free_access: "Free WIFI access provided by %{organization}"
+    zebra:
+      wait_message: "Please wait while we connect you"
+    connected: "You are now connected to Wifi!"
+fr:
+  splash:
+    connect_to_wifi: "Connectez-vous gratuitement au WIFI : "
+    facebook:
+      instructions: "Accéder au wifi gratuitement via Facebook,"
+      or: " ou "
+      alternative: "en cliquant ici"
+    linkedin:
+      instructions: "Accéder au wifi gratuitement via LinkedIn,"
+      or: " ou "
+      alternative: "en cliquant ici"
+    free_access: "%{organization} vous propose un accès WIFI gratuit"
+    zebra:
+      wait_message: "Please wait while we connect you"
+    connected: "Vous êtes maintenant connecté au wifi!"
+es:
+  splash:
+    connect_to_wifi: "Registrarse para tener acceso a Wifi gratis"
+    facebook:
+      instructions: "Conectarse vìa Facebook para un acceso Wifi gratis"
+      or: ""
+      alternative: "o haga clic aquí"
+    linkedin:
+      instructions: "Connect via LinkedIn for free WIFI access "
+      or: ""
+      alternative: "or click here"
+    free_access: "Free WIFI access provided by %{organization}"
+    zebra:
+      wait_message: "Please wait while we connect you"
+    connected: "Ahora estás conectado a wifi!"

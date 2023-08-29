@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+	<title>Biglari - Player</title>
+	<link rel="stylesheet" href="/assets/custom/biglari/player/stylesheets/all.css">
+
+</head>
+<body id="app-layout" class="anim-etam">
+
+	<div id="imageplayer" class="imageplayer">
+
+	</div>
+
+	<div class="container-fluid app-body biglari-code">
+		<img id="steak-logo" class="steak-logo" src="/assets/custom/biglari/player/images/fades/detour/biglari_coat.png" />
+
+		<div class="row body-form form-show" id="etam-form">
+			<div class="col-xs-12 form-container">
+				<!-- <img id="etam-form-close" src="/assets/custom/biglari/player/images/Close_btn.png" /> -->
+				<form action="<%= registration_path %>" id="ivizone-form" method="POST" accept-charset="utf-8" data-parsley-validate="">
+
+					<div class="col-xs-12 first-input">
+						<p class="text-form">
+							Entrer le code pour accéder au wifi</a>
+						</p>
+					</div>
+
+					<div class="col-xs-12 form-group">
+						<!-- <label for="first_name"></label> -->
+						<input type="text" name="custom[password]" id="password" class="form-control" placeholder="Code" data-parsley-error-message="Code incorrect" required="" data-parsley-required="" />
+					</div>
+
+					<div class="col-sm-9 col-sm-offset-2 col-xs-12 text-center checkbox form-no-padding">
+						<div class="col-xs-12" id="error-cgu" class="form-no-padding">
+							<div class="col-xs-1">
+								<div class="cgu">
+									<input data-parsley-errors-container="#error-cgu" type="checkbox" name="cgu" id="cgu" required="" required="" data-parsley-error-message="Merci de cocher cette case" data-parsley-trigger="change"/>
+									<label for="cgu"></label>
+								</div>
+							</div>
+							<div class="col-xs-10">
+								<p class="text-cgu">
+									En utilisant cette connexion internet, vous acceptez les <a href="#" id="link_cgu">conditions générales d'utilisation</a>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 text-center">
+						<input type="submit" class="btn btn-default" name="" id="btn-submit-etam" value="Connectez-vous">
+					</div>
+
+					<%= render 'splash/default_splash_fields' %>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<div id="MMD_footer">
+    <div id="MMD_footerLine"></div>
+    <div class="container">
+        <div class="row">
+            <div class="MMD_innerContent">
+                <div class="col-xs-12">
+                    <div id="MMD_footerDGClick" class="MMD_footerText" class="MMD_F1">Terms and Conditions</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="MMD_conditions">
+    <div id="MMD_conditionsHeader">
+        <div class="MMD_conditionsTitre MMD_F1">Terms and Conditions</div>
+        <img id="MMD_conditionsCClick" class="MMD_conditionsClose" src="/assets/custom/biglari/player/images/Close_btn.png" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="MMD_innerContent">
+                <div class="MMD_conditionsTexte MMD_F1">
+                  <%= render 'splash/ivizone_terms.en' %>
+                </div>
+                <img id="cgu_logo" class="MMD_conditionsLogo" src="/assets/custom/biglari/player/images/fades/detour/logo.png" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/assets/custom/biglari/player/javascript/code.js"></script>
+<script type="text/javascript" src="/assets/custom/biglari/player/javascript/all.js"></script>
+</body>
+</html>

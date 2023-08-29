@@ -1,0 +1,9 @@
+en:
+  sponsor:
+    wait_text:   "Please wait while your sponsor authorizes your request"
+    request_new: "Request a new authorization"
+
+fr:
+  sponsor:
+    wait_text:   "Please wait while your sponsor authorizes your request"
+    request_new: "Démandez une nouvelle authorisation"

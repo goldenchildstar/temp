@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>Marc_jacobs</title>
+    <link rel="stylesheet" href="/assets/custom/shared/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/custom/shared/stylesheets/background.css">
+    <link rel="stylesheet" href="/assets/custom/shared/tooltips.css">
+    <link rel="stylesheet" href="/assets/custom/shared/stylesheets/intlTelInput.css">
+    <script type="text/javascript" src="/assets/custom/shared/javascript/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/javascript/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/parsley.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/javascript/cgu.js"></script>
+    <style type="text/css" media="screen">
+      .parsley-error {
+        color: #B94A48 !important;
+        background-color: #F2DEDE !important;
+        border: 1px solid #EED3D7 !important;
+      }
+      .form-input {
+        padding-bottom: 3px;
+      }
+      .text-wifi {
+        font-size: 16px;
+        color: white;
+      }
+
+      #link_cgu, .text-cgu {
+        color: white;
+      }
+
+      .intl-tel-input {
+        /* width: 100%; */
+      }
+
+      #email {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      body {
+        background-color: black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="background_image_off"></div><!-- End Background -->
+
+    <div id="header">
+      <%= image_tag  asset_data_uri('organizations/marc_jacobs/logo-marc_jacobs-300x169.jpg'), class: 'img-responsive', id: 'header_logo' %>
+    </div>
+
+    <form action="/registration" id="ivizone-form" method="POST" data-parsley-validate="">
+      <div id="container">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <p class="text-wifi">
+                Sign In For Wifi Access With
+              </p>
+
+                <div class="col-xs-12 form-input" id="error-email">
+                  <input data-parsley-errors-messages-disabled type="email" name="email" id="email" class="form_MMD_F1" placeholder="Email"  required="" data-parsley-required="" />
+                </div>
+              
+
+              <div class="clearfix"></div>
+
+              <div class="saint-jean-cgu">
+                <div class="col-xs-2">
+                  <div class="cgu">
+                    <input data-parsley-errors-messages-disabled type="checkbox" name="cgu" id="cgu" required=""  data-parsley-trigger="change"/>
+                    <label for="cgu"></label>
+                  </div>
+                </div>
+                <div class="col-xs-9">
+                  <p class="text-cgu">
+                    By using this internet connection, you agree to and accept the 
+                    <a href="#" id="link_cgu">
+                    terms and conditions of usage
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="clearfix"></div>
+              <div class="col-xs-10 col-xs-offset-1">
+                <input id="MMD_formBtn" type="submit" class="MMD_F1" value="Connect" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%= render 'splash/default_splash_fields' %>
+    </form>
+
+    <div id="MMD_conditions">
+      <div id="MMD_conditionsHeader">
+        <div class="MMD_conditionsTitre MMD_F1">Terms and Conditions</div>
+        <img id="MMD_conditionsCClick" class="MMD_conditionsClose" src="/assets/custom/shared/images/Close_btn.png" />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="MMD_innerContent">
+            <div class="MMD_conditionsTexte MMD_F1">
+              <%= render 'splash/aruba/pages/marc_jacobs/cgu' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>

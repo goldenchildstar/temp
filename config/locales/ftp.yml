@@ -1,0 +1,24 @@
+en:
+  ftp:
+    instructions:
+      one: "Complete the form to connect to wifi"
+      two: "If you already have an access code, please click on"
+      link: "enter your acccess code"
+    sponsor: "Sponsor"
+    code:
+      request_new: "Request a new access code"
+      validate: "Submit"
+      invalid: "Code Incorrect"
+
+
+fr:
+  ftp:
+    instructions:
+      one: "Complétez les informations suivantes pour accéder au wifi"
+      two: "Si vous disposez déjà d’un code d’accès, merci de cliquer sur"
+      link: "entrer votre code d'accès"
+    sponsor: "Parrainage"
+    code:
+      request_new: "Demander un nouveau code d'accès"
+      validate: "Valider"
+      invalid: "Code Invalide"

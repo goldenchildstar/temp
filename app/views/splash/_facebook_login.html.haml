@@ -1,0 +1,13 @@
+#facebook-login
+  :css
+    .facebook {
+      width: 200px;
+      height: 75px;
+      margin: auto;
+      position: relative;
+      top: -20px;
+    }
+
+  .center-text
+    .row
+      %p= link_to image_tag(asset_data_uri(facebook_login_button), class: 'facebook'), signin_path(:facebook), id: 'facebook-link', role: 'button'

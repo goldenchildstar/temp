@@ -1,0 +1,19 @@
+# encoding: UTF-8
+
+require 'spec_helper'
+require 'request_helper'
+
+def relay_splash_page
+  splash_path({organization: 'relay'})
+end
+
+feature "Relay splash page" do
+  scenario 'Signing into a Relay Access Point' do
+    visit relay_splash_page
+    fill_in 'Nom',       with: 'Burks'
+    fill_in 'Prénom',    with: 'Sidney'
+    fill_in 'Téléphone', with: '0659925804'
+    fill_in 'Email',     with: 'sidney.burks@ividata.com'
+    click_on 'Connectez-vous'
+  end
+end

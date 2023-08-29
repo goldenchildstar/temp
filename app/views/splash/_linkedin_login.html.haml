@@ -1,0 +1,11 @@
+:css
+  .linkedin {
+    width: 200px;
+    height: 40px;
+    margin: auto;
+    position: relative;
+  }
+
+.center-text
+  .row
+    %p= link_to image_tag(asset_data_uri(linkedin_login_button), class: 'linkedin'), signin_path(:linkedin), id: 'login-link', role: 'button'

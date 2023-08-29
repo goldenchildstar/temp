@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>Kenzo - Connect</title>
+    <link rel="stylesheet" href="/assets/custom/kenzo/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/custom/kenzo/stylesheets/custom.css">
+    <link rel="stylesheet" href="/assets/custom/shared/tooltips.css">
+    <script type="text/javascript" src="/assets/custom/kenzo/javascript/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/kenzo/javascript/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/parsley.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/kenzo/javascript/custom.js"></script>
+    <style type="text/css" media="screen">
+        .parsley-error {
+            color: #B94A48 !important;
+            background-color: #F2DEDE !important;
+            border: 1px solid #EED3D7 !important;
+        }
+        .form-input {
+          padding-bottom: 10px;
+        }
+        #header_logo {
+          padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div id="background_image"></div><!-- End Background -->
+
+<div id="header">
+    <img id="header_logo" src="/assets/custom/kenzo/images/kenzo-logo-v2.svg" class="img-responsive"/>
+</div>
+
+<form action="/registration" id="ivizone-form" method="POST" data-parsley-validate="">
+    <div id="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                  <p class="text-wifi"><%= t 'kenzo.header_1' %><br/><%= t 'kenzo.header_2' %></p>
+                    <div class="col-xs-12 form-input" id="error-first">
+                      <input data-parsley-errors-messages-disabled type="first_name" name="first_name" id="first_name" class="form_MMD_F1" placeholder="<%= t 'kenzo.form.placeholder.first_name' %>"  required="" data-parsley-required="" />
+                    </div>
+                    <div class="col-xs-12 form-input" id="error-last">
+                      <input data-parsley-errors-messages-disabled type="last_name" name="last_name" id="last_name" class="form_MMD_F1" placeholder="<%= t 'kenzo.form.placeholder.last_name' %>"  required="" data-parsley-required="" />
+                    </div>
+                    <div class="col-xs-12 form-input" id="error-email">
+                      <input data-parsley-errors-messages-disabled type="email" name="email" id="email" class="form_MMD_F1" placeholder="<%= t 'kenzo.form.placeholder.email' %>"  required="" data-parsley-required="" />
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="saint-jean-cgu">
+                        <div class="col-xs-2">
+                            <div class="cgu">
+                                <input data-parsley-errors-messages-disabled type="checkbox" name="cgu" id="cgu" required=""  data-parsley-trigger="change"/>
+                                <label for="cgu"></label>
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <p class="text-cgu">
+                              <%= t 'kenzo.terms_1' %> <a href="#" id="link_cgu"><%= t 'kenzo.terms_2' %></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1">
+                      <input id="MMD_formBtn" type="submit" class="MMD_F1" value="<%= t 'kenzo.form.submit' %>" />
+                    </div>
+                    <%= render 'splash/default_splash_fields' %>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="MMD_footer">
+    <div id="MMD_footerLine"></div>
+    <div class="container">
+        <div class="row">
+            <div class="MMD_innerContent">
+                <div class="col-xs-12">
+                  <div id="MMD_footerDGClick" class="MMD_footerText" class="MMD_F1"><%= t 'kenzo.terms_title' %></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="MMD_conditions">
+    <div id="MMD_conditionsHeader">
+        <div class="MMD_conditionsTitre MMD_F1"><%= t 'kenzo.terms_title' %></div>
+        <img id="MMD_conditionsCClick" class="MMD_conditionsClose" src="/assets/custom/kenzo/images/Close_btn.png" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="MMD_innerContent">
+                <div class="MMD_conditionsTexte MMD_F1">
+                  <%= render kenzo_terms %>
+                </div>
+                <img id="cgu_logo" class="MMD_conditionsLogo" src="/assets/custom/kenzo/images/kenzo-logo-v2-black.svg" />
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

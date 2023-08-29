@@ -1,0 +1,27 @@
+en:
+  kenzo:
+    header_1: "SIGN IN FOR"
+    header_2: "WIFI ACCESS WITH"
+    form:
+      placeholder:
+        first_name: "First Name"
+        last_name:  "Last Name"
+        email:      "Email"
+      submit: "CONNECT"
+    terms_1: "BY USING THIS INTERNET CONNECTION, YOU AGREE TO THE " 
+    terms_2: "TERMS AND CONDITIONS"
+    terms_title: "Terms and Conditions of Usage"
+
+ja:
+  kenzo:
+    header_1: "KENZO ゲスト WIFI を利用するにはご氏名、メールアドレスの登録が必要です。"
+    header_2: ""
+    form:
+      placeholder:
+        first_name: "名前 （FIRST NAME)"
+        last_name:  "苗字 （LAST NAME)"
+        email:      "メールアドレス"
+      submit: "インターネットに接続する"
+    terms_1: "このインターネット接続を使用することにより、" 
+    terms_2: "お客様は本契約条件に同意したものとみなされます"
+    terms_title: "利用規約"

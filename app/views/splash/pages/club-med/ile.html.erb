@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+	<title>Club Med - Ile</title>
+	<link rel="stylesheet" href="/assets/custom/club-med/ile/stylesheets/all.css">
+
+</head>
+<body id="app-layout">
+
+<div class="club-med-background" id="club-med-background"></div>
+
+<div class="container-fluid app-body">
+
+	<div class="row header">
+		<div class="col-xs-12 text-center"><!-- Classes Switch Here -->
+			<img src="/assets/custom/club-med/ile/images/logo.png" class="logo-left"/>
+			<div class="header-left"></div>
+			<img src="/assets/custom/club-med/ile/images/logo-2.png" class="logo-middle"/>
+			<div class="header-right"></div>
+			<img src="/assets/custom/club-med/ile/images/logo-wifi.png" class="logo-right"/>
+		</div>
+	</div>
+
+	<div class="row body-icons" id="club-med-icons">
+		<div class="col-xs-12  text-center">
+
+			<div class="col-xs-12 form-container" id="icons-container">
+				<p class="club-med-wording">
+					Club Med vous offre le wifi gratuit, connectez-vous avec les boutons
+					ci-dessous&nbsp;:
+				</p>
+				<a id="form-link" href="#">
+					<img src="/assets/custom/club-med/ile/images/social/email.png" class="club-med-email"/>
+				</a>
+				<a id="facebook-link" href="<%= signin_path(:facebook) %>">
+					<img src="/assets/custom/club-med/ile/images/social/facebook.png" class="club-med-facebook"/>
+				</a>
+				<p class="club-med-plus">
+					Vous venez de vous connecter grâce à un réseau Wi-Fi public, mis à disposition par CLUB MED.
+          <a href="<%= meraki_link('hadopi.html')  %>">En savoir plus</a>
+				</p>
+			</div>
+
+			<div class="col-xs-12 form-container" id="form-container">
+
+				<img id="club-med-form-close" src="/assets/custom/club-med/ile/images/Close_btn.png" />
+				<form action="<%= registration_path %>" id="ivizone-form" class="club-med-form-3" method="POST" accept-charset="utf-8" data-parsley-validate=""><!-- Classes Switch Here -->
+
+					<div class="col-xs-12 form-group">
+						<label class="label-form" for="last_name">Nom *</label>
+						<input data-parsley-errors-container="#error-name" type="text" name="last_name" id="last_name" class="form-control input-form" placeholder="" data-parsley-error-message="Merci de renseigner votre nom." required="" data-parsley-required="" />
+					</div>
+
+					<div class="col-xs-12 form-group">
+						<label class="label-form" for="first_name">Prénom *</label>
+						<input data-parsley-errors-container="#error-name" type="text" name="first_name" id="first_name" class="form-control input-form" placeholder="" data-parsley-error-message="Merci de renseigner votre nom." required="" data-parsley-required="" />
+					</div>
+
+					<div class="col-xs-12 form-group">
+						<label class="label-form" for="email">Adresse Email *</label>
+						<input data-parsley-errors-container="#error-email" type="email" name="email" id="email" class="form-control input-form" placeholder="" data-parsley-error-message="Merci de renseigner votre e-mail." required="" data-parsley-required="" />
+					</div>
+
+					<div class="col-xs-12 form-group">
+						<label class="label-form" for="phone">Téléphone</label>
+						<input type="tel" name="phone" id="phone" class="form-control input-form" placeholder=""/>
+					</div>
+
+					<div class="col-xs-12 form-group">
+						<label class="label-form" for="email">Code Postal</label>
+						<input type="text" name="custom[postal_code]" id="custom[postal_code]" class="form-control input-form" placeholder="" />
+						<p class="text-obligatoire">
+              * Champs obligatoires. <a href="<%= meraki_link('donnees.html') %>">En savoir plus sur l'utilisation des données</a>
+						</p>
+					</div>
+
+					<div class="col-xs-12 text-center checkbox" id="error-cgu">
+						<div class="col-xs-1">
+							<div class="cgu">
+								<input data-parsley-errors-container="#error-cgu" type="checkbox" name="cgu" id="cgu" required="" data-parsley-error-message="Merci de cocher cette case." data-parsley-trigger="change"/>
+								<label class="label-cgu" for="cgu"></label>
+							</div>
+						</div>
+						<div class="col-xs-10">
+							<p class="text-cgu"><!-- Text Here -->
+								J'accepte les <a href="/assets/custom/club-med/ile/cgu/cgu.pdf">conditions générales d'utilisation</a>.
+							</p>
+						</div>
+					</div>
+
+					<div class="col-xs-12 text-center checkbox" id="error-newsletter">
+						<div class="col-xs-1">
+							<div class="newsletter">
+								<input type="checkbox" name="custom[newsletter]" id="custom[newsletter]" data-parsley-trigger="change"/>
+								<label class="label-newsletter" for="custom[newsletter]"></label>
+							</div>
+						</div>
+						<div class="col-xs-10">
+							<p class="text-cgu"><!-- Text Here -->
+								Je souhaite recevoir les offres commerciales du Club Med.
+							</p>
+						</div>
+					</div>
+
+					<div class="col-xs-12 text-right">
+						<input type="submit" class="btn btn-default" name="" id="btn-submit-club-med" value="Connexion">
+					</div>
+
+					<%= render 'splash/default_splash_fields' %>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<div id="MMD_conditions">
+	<div id="MMD_conditionsHeader">
+	  <div class="MMD_conditionsTitre MMD_F1">Terms and Conditions</div><!-- Text Here -->
+	  <img id="MMD_conditionsCClick" class="MMD_conditionsClose" src="/assets/custom/club-med/ile/images/Close_btn.png" />
+	</div>
+	<div class="container">
+		<div class="row">
+		    <div class="MMD_innerContent">
+		        <img id="cgu_logo" class="MMD_conditionsLogo" src="/assets/custom/club-med/ile/images/logo.png" />
+		    </div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/assets/custom/club-med/ile/javascript/all.js"></script>
+<script type="text/javascript">
+	ividata.core.templates.landing();
+</script>
+</body>
+</html>

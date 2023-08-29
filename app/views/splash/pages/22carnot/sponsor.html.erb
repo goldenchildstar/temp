@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>22Carnot</title>
+    <link rel="stylesheet" href="/assets/custom/shared/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/custom/shared/stylesheets/background.css">
+    <link rel="stylesheet" href="/assets/custom/transdev/sponsor/stylesheets/background.css">
+    <link rel="stylesheet" href="/assets/custom/shared/tooltips.css">
+    <script type="text/javascript" src="/assets/custom/shared/javascript/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/javascript/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/parsley.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/javascript/cgu.js"></script>
+    <style type="text/css" media="screen">
+.parsley-error {
+  color: #B94A48 !important;
+  background-color: #F2DEDE !important;
+  border: 1px solid #EED3D7 !important;
+}
+      .form-input {
+        padding-bottom: 3px;
+      }
+      .text-wifi {
+        font-size: 16px;
+        color: black;
+      }
+
+      #cgu-checkbox::after {
+        color: black;
+      }
+
+      #link_cgu, .text-cgu {
+        color: #ddedff;
+        color: black;
+        text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
+      }
+      #error-sponsor-email {
+        margin-top: 20px;
+      }
+      #error-sponsor-email ul.parsley-errors-list.filled {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        color: #B94A48;
+        background: none;
+        /* background-color: white; */
+        text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .sponsor-email {
+        text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
+        font-size: 16px;
+        color: #ddedff;
+        margin-left: -135px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="background_image_off"></div><!-- End Background -->
+
+    <div id="header">
+      <div class="white-background">
+        <%= image_tag  asset_data_uri('organizations/22carnot/logo-22carnot-300x165.jpg'), class: 'img-responsive', id: 'header_logo' %>
+      </div>
+    </div>
+
+    <form action="<%= carnot_sponsor_registration_path %>" id="ivizone-form" method="POST" data-parsley-validate="">
+
+      <div class="col-lg-12 text-center">
+        <p class="text-wifi">
+          <%= t('carnot.wifi_header_1') %>
+          <br><%= t('carnot.or') %> <%= link_to t('carnot.wifi_header_link'), carnot_access_code_path(params) %>
+        </p>
+
+        <div class="col-xs-12 form-input" id="error-first">
+          <input data-parsley-errors-messages-disabled type="text" name="first_name" id="first_name" class="form_MMD_F1" placeholder="<%= t('form.placeholder.first_name') %>"  value="<%= params[:first_name] %>" required="" data-parsley-required="" />
+        </div>
+        <div class="col-xs-12 form-input" id="error-last">
+          <input data-parsley-errors-messages-disabled type="text" name="last_name" id="last_name" class="form_MMD_F1" placeholder="<%= t('form.placeholder.last_name') %>"  value="<%= params[:last_name] %>" required="" data-parsley-required="" />
+        </div>
+
+        <div class="col-xs-12 form-input" id="error-email">
+          <input data-parsley-errors-messages-disabled type="email" name="email" id="email" class="form_MMD_F1" placeholder="<%= t('form.placeholder.email') %>"  value="<%= params[:email] %>" required="" data-parsley-required="" />
+        </div>
+
+        <div class="col-xs-12 form-input" id="error-sponsor-email">
+          <label for="custom_sponsor_email" class="sponsor-email"><%= t('carnot.sponsor_title') %></label>
+          <!-- <input type="email" name="custom[sponsor_email]" id="custom_sponsor_email" class="form_MMD_F1" placeholder="<%= t('form.placeholder.sponsor_email') %>"  value="<%= params[:custom][:sponsor_email] if params[:custom].present? %>" required="" data&#45;parsley&#45;required="" data&#45;parsley&#45;required&#45;message="Merci de renseigner l'e&#45;mail de votre sponsor" data&#45;parsley&#45;pattern="(?=.*@(*.com|ividata.com)).*" data&#45;parsley&#45;pattern&#45;message="Votre sponsor doit avoir une adresse mail de transdev.com" /> -->
+          <input type="email" name="custom[sponsor_email]" id="custom_sponsor_email" class="form_MMD_F1" placeholder="<%= t('form.placeholder.sponsor_email') %>"  value="<%= params[:custom][:sponsor_email] if params[:custom].present? %>" required="" data-parsley-required="" data-parsley-required-message="Merci de renseigner l'e-mail de votre sponsor"  />
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="saint-jean-cgu">
+          <div class="col-xs-2">
+            <div class="cgu">
+              <input data-parsley-errors-messages-disabled type="checkbox" name="cgu" id="cgu" required=""  data-parsley-trigger="change"/>
+              <label id="cgu-checkbox" for="cgu"></label>
+            </div>
+          </div>
+          <div class="col-xs-9">
+            <p class="text-cgu">
+              <%= t('legal.full_disclaimer') %> <a href="#" id="link_cgu"><%= t('legal.conditions') %></a>
+            </p>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="col-xs-10 col-xs-offset-1">
+          <input id="MMD_formBtn" type="submit" class="MMD_F1" value="<%= t('form.submit') %>" />
+        </div>
+      </div>
+      <%= render 'splash/default_splash_fields' %>
+      <p class="invisible-point">
+        .
+      </p>
+    </form>
+
+    <div id="MMD_conditions">
+      <div id="MMD_conditionsHeader">
+        <div class="MMD_conditionsTitre MMD_F1"><%= t('carnot.cgu') %></div>
+        <img id="MMD_conditionsCClick" class="MMD_conditionsClose" src="/assets/custom/shared/images/Close_btn.png" />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="MMD_innerContent">
+            <div class="MMD_conditionsTexte MMD_F1">
+              <%= render 'splash/pages/22carnot/terms' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

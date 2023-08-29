@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>FTP</title>
+    <link rel="stylesheet" href="/assets/custom/shared/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/custom/shared/stylesheets/background.css">
+    <link rel="stylesheet" href="/assets/custom/shared/tooltips.css">
+    <script type="text/javascript" src="/assets/custom/shared/javascript/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/javascript/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/parsley.min.js"></script>
+    <script type="text/javascript" src="/assets/custom/shared/javascript/cgu.js"></script>
+    <style type="text/css" media="screen">
+      .parsley-error {
+        color: #B94A48 !important;
+        background-color: #F2DEDE !important;
+        border: 1px solid #EED3D7 !important;
+      }
+      .form-input {
+        padding-bottom: 3px;
+      }
+      .text-wifi {
+        text-shadow: none;
+        font-size: 16px;
+        color: black;
+      }
+
+      #link_cgu, .text-cgu {
+        color: black;
+      }
+
+      #custom_sms {
+        text-align: center;
+      }
+
+      a {
+        color: black;
+      }
+      #header {
+        height: auto;
+      }
+      #ftp_logo {
+        width: 500px;
+        max-width: 80%;
+        margin: 15px auto;
+      }
+      @media screen and (min-width: 768px) {
+        #ftp_logo {
+          margin: 60px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="background_image_off"></div><!-- End Background -->
+
+    <div id="header">
+      <img id="ftp_logo" class="img-responsive" src="/assets/custom/ftp/images/logo_ftp_2.jpg" />
+    </div>
+
+
+    <form action="<%= ftp_access_code_verification_path %>" id="ivizone-form" method="POST" data-parsley-validate="true">
+      <div id="container">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 form-input" id="error-phone">
+              <input data-parsley-errors-messages-disabled type="tel" name="access_code" id="access_code" class="form_MMD_F1" placeholder="<%= t('sms.form.placeholder.code') %>"  required="" data-parsley-required="true" />
+            </div>
+
+            <% if @invalid_code %>
+            <p class='text-wifi-error'>
+              <%= t('ftp.code.invalid') %>
+            </p>
+            <% end %>
+
+            <%= render 'splash/default_splash_fields' %>
+            <div class="clearfix"></div>
+
+            <div class="col-xs-10 col-xs-offset-1">
+              <input id="MMD_formBtn" type="submit" class="MMD_F1" value="Valider" />
+            </div>
+
+          </div>
+          <br />
+          <br />
+          <div class='row text-wifi sms-link'>
+            <%= link_to t('ftp.code.request_new'), ftp_sponsor_splash_url(params) %>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

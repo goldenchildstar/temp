@@ -1,0 +1,29 @@
+:css
+  #logo {
+    height: 161px;
+    width: 300px;
+    margin-top: 40px;
+  }
+
+  .terms-link {
+    position: relative;
+    top: -40px;
+  }
+
+  .welcome-message {
+    margin-bottom: 20px;
+  }
+
+.welcome
+  .row
+    = image_tag  asset_data_uri('organizations/maif_social_club/logo-maif_social_club-300x161.png'), class: 'img-responsive', id: 'logo'
+
+  .row.welcome-message
+    %p#message
+      = t('splash.facebook.instructions')
+      %br #{t('splash.facebook.or')} #{link_to t('splash.facebook.alternative'), alt_page('registration') }
+
+  = render 'facebook_login'
+
+  .row.center-text.terms-link
+    = render 'terms_link'

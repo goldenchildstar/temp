@@ -1,0 +1,56 @@
+!!! 5
+%html(lang='#{I18n.locale}')
+  %head
+    = render 'shared/head'
+  %body
+    = stylesheet_link_tag 'application.css'
+    = render 'splash/css/application'
+    #spinner
+
+    %div#main_content
+      .container
+        = yield
+
+    = javascript_include_tag 'application.js'
+    = content_for :custom_javascript
+
+    :javascript
+      var opts = {
+        lines: 10, // The number of lines to draw
+        length: 13, // The length of each line
+        width: 6, // The line thickness
+        radius: 10, // The radius of the inner circle
+        corners: 1, // Corner roundness (0..1)
+        rotate: 0, // The rotation offset
+        direction: 1, // 1: clockwise, -1: counterclockwise
+        color: '#fff', // #rgb or #rrggbb or array of colors
+        speed: 1.5, // Rounds per second
+        trail: 30, // Afterglow percentage
+        shadow: false, // Whether to render a shadow
+        hwaccel: false, // Whether to use hardware acceleration
+        className: 'spinner', // The CSS class to assign to the spinner
+        zIndex: 2e9, // The z-index (defaults to 2000000000)
+        top: '50', // Top position relative to parent in px
+        left: '50' // Left position relative to parent in px
+      };
+
+      target = document.getElementById('spinner');
+      var spinner = new Spinner(opts).spin(target);
+
+      $('#facebook-link').click(function(e){
+        $('#spinner').show();
+        mixpanel.track('Facebook clicked');
+      });
+
+      if (typeof(Parsley) !== "undefined") {
+        Parsley.on('form:submit', function(event){
+          $('#spinner').show();
+          mixpanel.track('Standard Form Submitted');
+          //Ivizone.logEvent({event: 'UserSubmittedForm'});
+        });
+      }
+
+      mixpanel.register(#{@tracking_data.to_json.html_safe});
+      mixpanel.track("Page loaded");
+      mixpanel.track_links('#termsLink', "Viewed Terms");
+

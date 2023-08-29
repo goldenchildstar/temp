@@ -1,0 +1,29 @@
+:css
+  #logo {
+    height: <%= logo_height %>px;
+    width: <%= logo_width %>px;
+    margin-top: 40px;
+  }
+
+  .terms-link {
+    position: relative;
+    top: -40px;
+  }
+
+  .welcome-message {
+    margin-bottom: 20px;
+  }
+
+.welcome
+  .row
+    = image_tag  asset_data_uri('<%= logo_path %>'), class: 'img-responsive', id: 'logo'
+
+  .row.welcome-message
+    %p#message
+      = t('splash.facebook.instructions')
+      %br #{t('splash.facebook.or')} #{link_to t('splash.facebook.alternative'), alt_page('registration') }
+
+  = render 'splash/facebook_login'
+
+  .row.center-text.terms-link
+    = render 'terms_link'
